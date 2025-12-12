@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+
+
+    <title>Lotus Affirmations Flashcards</title>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <div>
+                <h1 class="brand-title">Lotus Affirmations</h1>
+                <p class="brand-subtitle">Breathe. Flip. Believe.</p>
+            </div>
+        </div>
+
+        <div class="topbar-actions">
+            <button class="btn" id="newDeckBtn" type="button">New Deck</button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <nav class="sidebar" aria-label="Decks">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Decks</h2>
+            </div>
+
+            <ul class="deck-list" id="deckList"></ul>
+
+            <div class="sidebar-footer">
+                <p class="hint">Tip: Use Space to flip • ← → to move</p>
+            </div>
+        </nav>
+
+        <main class="main" aria-live="polite">
+            <section class="panel">
+                <div class="panel-top">
+                    <h2 class="deck-title" id="deckTitle">No deck selected</h2>
+
+                    <div class="toolbar">
+                        <label class="sr-only" for="searchInput">Search cards</label>
+                        <input id="searchInput" class="input" type="search" placeholder="Search within deck..." />
+
+                        <button class="btn btn-ghost" id="shuffleBtn" type="button">Shuffle</button>
+                        <button class="btn" id="newCardBtn" type="button">New Card</button>
+                    </div>
+                </div>
+
+                <div class="card-stage">
+                    <div class="card" id="studyCard" tabindex="0" role="button"
+                        aria-label="Study card. Press Space to flip.">
+                        <div class="card-face card-front" id="cardFront">Pick a deck to begin.</div>
+                        <div class="card-face card-back" id="cardBack">Your affirmation will appear here.</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-ghost" id="prevBtn" type="button">Prev</button>
+                    <button class="btn" id="flipBtn" type="button">Flip</button>
+                    <button class="btn btn-ghost" id="nextBtn" type="button">Next</button>
+                </div>
+
+                <div class="status-row">
+                    <span class="status" id="statusText">0 / 0</span>
+                    <div class="deck-actions">
+                        <button class="link" id="renameDeckBtn" type="button">Rename Deck</button>
+                        <button class="link danger" id="deleteDeckBtn" type="button">Delete Deck</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>Words of affirmation flashcards • LocalStorage saved • Lotus theme</p>
+    </footer>
+
+    <!-- MODAL: NEW / RENAME DECK -->
+    <div class="modal" id="deckModal" role="dialog" aria-modal="true" aria-labelledby="deckModalTitle" hidden>
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-card" role="document">
+            <h3 id="deckModalTitle">Deck</h3>
+
+            <label class="label" for="deckNameInput">Deck name</label>
+            <input class="input" id="deckNameInput" type="text" maxlength="40" placeholder="Ex: Morning Bloom" />
+
+            <div class="modal-actions">
+                <button class="btn btn-ghost" id="cancelDeckBtn" type="button">Cancel</button>
+                <button class="btn" id="saveDeckBtn" type="button">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: NEW / EDIT CARD -->
+    <div class="modal" id="cardModal" role="dialog" aria-modal="true" aria-labelledby="cardModalTitle" hidden>
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-card" role="document">
+            <h3 id="cardModalTitle">Card</h3>
+
+            <label class="label" for="frontInput">Front</label>
+            <textarea class="input textarea" id="frontInput" rows="3" maxlength="140"
+                placeholder="Ex: I am grounded."></textarea>
+
+            <label class="label" for="backInput">Back</label>
+            <textarea class="input textarea" id="backInput" rows="3" maxlength="240"
+                placeholder="Ex: I can handle today with grace."></textarea>
+
+            <div class="modal-actions">
+                <button class="btn btn-ghost" id="cancelCardBtn" type="button">Cancel</button>
+                <button class="btn" id="saveCardBtn" type="button">Save</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
