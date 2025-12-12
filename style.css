@@ -1,7 +1,7 @@
 /* LOTUS THEME */
 
 * {
-  cursor: url("./assets/lotus-cursor.png"), auto;
+  cursor: url("./assets/lotus\ coursor.png"), auto;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 
   background-image:
     linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-    url("./assets/lotus.png");
+    url("./assets/lotuspic.png");
 
   background-size: cover;
   background-position: center;
@@ -38,7 +38,7 @@ body {
 /* NOTE TO SELF: Lotus cursor everywhere */
 *{
   box-sizing: border-box;
-  cursor: url("./assets/cursor.png") 10 10, auto;
+  cursor: url("./assets/lotus\ coursor.png") 10 10, auto;
 }
 
 html, body{
@@ -55,7 +55,7 @@ body{
     radial-gradient(1200px 800px at 20% 10%, rgba(255,175,210,0.25), transparent 60%),
     radial-gradient(900px 700px at 80% 20%, rgba(220,190,255,0.18), transparent 60%),
     linear-gradient(180deg, rgba(5,8,12,0.9), rgba(5,8,12,0.95)),
-    url("./assets/lotus.png");
+    url("./assets/lotuspic.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
